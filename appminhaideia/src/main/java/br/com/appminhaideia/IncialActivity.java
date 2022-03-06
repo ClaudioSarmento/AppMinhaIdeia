@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
-public class SplashActivity extends AppCompatActivity {
+public class IncialActivity extends AppCompatActivity {
 
     String TAG = "APP_MINHA_IDEIA";
     int tempoDeEspera = 1000 * 10;
@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_inicial);
 
         trocarTela();
         Log.d(TAG, "onCreate: Tela Splash carregada...");
@@ -23,14 +23,11 @@ public class SplashActivity extends AppCompatActivity {
 
     private void trocarTela() {
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Log.d(TAG, "Esperando o tempo para mudar de Tela...");
-                Intent itSplash = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(itSplash);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Log.d(TAG, "Esperando o tempo para mudar de Tela...");
+            Intent itSplash = new Intent(IncialActivity.this, MainActivity.class);
+            startActivity(itSplash);
+            finish();
         }, tempoDeEspera);
     }
 }
