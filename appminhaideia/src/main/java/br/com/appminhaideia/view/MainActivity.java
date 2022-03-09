@@ -10,12 +10,13 @@ import android.util.Log;
 import android.widget.TextView;
 
 import br.com.appminhaideia.R;
+import br.com.appminhaideia.core.AppUtil;
 import br.com.appminhaideia.model.Cliente;
 
 // AppCompactActivity vem do SKD do Android e contem tudo que é necessário para gerar o layout da tela
 public class MainActivity extends AppCompatActivity {
 
-    String TAG = "APP_MINHA_IDEIA";
+
     TextView txtNome;
 
     @Override
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG, "onCreate: Tela Principal carregada...");
+        Log.d(AppUtil.TAG, "onCreate: Tela Principal carregada...");
 
         Bundle bundle = getIntent().getExtras(); // recupera o Bundle
 
